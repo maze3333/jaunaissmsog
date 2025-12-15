@@ -30,7 +30,6 @@
     a { color: #c4b5fd; text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    /* top bar – now just a thin line for vibe */
     .top-bar {
       padding: 0.4rem 1rem;
       border-bottom: 1px solid #050810;
@@ -114,14 +113,13 @@
       mix-blend-mode: screen;
     }
 
-    /* SMS rain */
     .sms-rain {
       position: absolute;
       inset: 0;
       pointer-events: none;
       overflow: hidden;
       z-index: 0;
-      font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Courier New", monospace;
     }
 
     .sms-rain span {
@@ -158,26 +156,19 @@
       gap: 1.3rem;
     }
 
+    /* cooler mono/arcade font for main title */
     .hero-title {
-      font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      font-size: 1.9rem;
-      line-height: 1.3;
-      letter-spacing: 0.15em;
+      font-family: "IBM Plex Mono", "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Courier New", monospace;
+      font-size: 2rem;
+      line-height: 1.35;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
       color: #e5e7eb;
       margin: 0.3rem 0 0.7rem;
     }
 
     .hero-title span {
-      color: #dc2626; /* red Merry Christmas */
-    }
-
-    .hero-subtitle {
-      font-size: 0.78rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text-soft);
-      margin-bottom: 0.4rem;
+      color: #dc2626;
     }
 
     .hero-copy {
@@ -288,7 +279,7 @@
       border-radius: 0.5rem;
       padding: 0.6rem 0.7rem;
       color: #111827;
-      font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Courier New", monospace;
       font-size: 0.72rem;
       text-transform: uppercase;
       border: 2px solid #111827;
@@ -376,7 +367,6 @@
       text-align: center;
     }
 
-    /* footer now blank line for spacing only */
     footer {
       border-top: 1px solid #050810;
       padding: 0.9rem 1rem 1.2rem;
@@ -427,7 +417,6 @@
       </div>
       <div class="right-content">
         <div>
-          <p class="hero-subtitle">THE FIRST SMS: “MERRY CHRISTMAS”</p>
           <h1 class="hero-title">
             THE FIRST SMS:<br>
             <span>"MERRY CHRISTMAS"</span><br>
@@ -440,7 +429,6 @@
           </p>
           <div class="hero-badges">
             <span class="badge badge-strong">Ticker: $OGSMS</span>
-            <span class="badge">Retro GSM · 1992</span>
           </div>
           <div class="btn-row">
             <button class="btn btn-primary" onclick="openBuy()">BUY / TRADE</button>

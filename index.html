@@ -336,7 +336,13 @@
     }
 
     .scr-line-1 { letter-spacing: 0.18em; }
-    .scr-line-2 { margin-top: 0.2rem; font-weight: 600; }
+
+    .scr-line-2 {
+      margin-top: 0.2rem;
+      font-weight: 600;
+      color: #dc2626; /* red Merry Christmas */
+    }
+
     .scr-line-3 { margin-top: 0.2rem; }
     .scr-line-4 { margin-top: 0.2rem; }
 
@@ -543,7 +549,6 @@
   <script>
     const BUY_URL = "#";  // put your real DEX / presale link here
 
-    // use your uploaded sound file
     const beep = new Audio("christmassatellite-96806.mp3");
 
     let lastSent = null;
@@ -589,13 +594,11 @@
         const now = new Date();
         lastSent = now;
 
-        // play sound
         try {
           beep.currentTime = 0;
           beep.play();
         } catch (e) {}
 
-        // vibrate phone
         phoneShell.classList.add("vibrate");
         setTimeout(() => {
           phoneShell.classList.remove("vibrate");

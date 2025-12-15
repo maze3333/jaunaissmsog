@@ -171,7 +171,7 @@
       margin: 0.3rem 0 0.7rem;
     }
 
-    .hero-title span {
+    .hero-titlespan {
       color: var(--accent2);
     }
 
@@ -485,6 +485,9 @@
   <script>
     const BUY_URL = "#";  // put your real DEX / presale link here
 
+    // use your uploaded sound file
+    const beep = new Audio("smsreceived-98662.mp3");
+
     let lastSent = null;
     let inputCode = "";
 
@@ -526,7 +529,17 @@
       if (inputCode === "1992") {
         const now = new Date();
         lastSent = now;
-        logEl.textContent = 'Virtual SMS "MERRY CHRISTMAS" broadcast at ' + now.toLocaleTimeString() + '.';
+
+        // play retro beep sound
+        try {
+          beep.currentTime = 0;
+          beep.play();
+        } catch (e) {
+          // ignore if browser blocks autoplay
+        }
+
+        logEl.textContent =
+          'Virtual SMS "MERRY CHRISTMAS" broadcast at ' + now.toLocaleTimeString() + '.';
         inputCode = "";
       } else {
         logEl.textContent = "WRONG CODE. TYPE 1992, THEN PRESS SEND.";
@@ -550,3 +563,4 @@
   </script>
 </body>
 </html>
+

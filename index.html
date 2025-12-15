@@ -30,61 +30,21 @@
     a { color: #c4b5fd; text-decoration: none; }
     a:hover { text-decoration: underline; }
 
+    /* top bar – now just a thin line for vibe */
     .top-bar {
-      padding: 0.55rem 1rem;
+      padding: 0.4rem 1rem;
       border-bottom: 1px solid #050810;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       background: #010308;
-      font-size: 0.82rem;
-    }
-
-    .top-button {
-      background: transparent;
-      color: var(--text-soft);
-      border: 1px solid #30323f;
-      padding: 0.28rem 0.7rem;
-      border-radius: 4px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      font-size: 0.7rem;
-      cursor: pointer;
-    }
-
-    .top-right {
-      display: flex;
-      gap: 0.6rem;
-      align-items: center;
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.32rem;
-      padding: 0.22rem 0.7rem;
-      border-radius: 999px;
-      border: 1px solid #1f2937;
-      background: #050810;
-      font-size: 0.7rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-soft);
-    }
-
-    .dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: var(--accent);
-      box-shadow: 0 0 10px rgba(34,197,94,0.9);
-    }
-
-    .top-links a {
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
+      font-size: 0.8rem;
       color: #6b7280;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .top-bar small {
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
     }
 
     .wrapper {
@@ -130,6 +90,7 @@
       max-width: 420px;
       margin-left: auto;
       margin-right: auto;
+      line-height: 1.6;
     }
 
     .right {
@@ -207,9 +168,8 @@
       margin: 0.3rem 0 0.7rem;
     }
 
-    /* red "MERRY CHRISTMAS" in hero */
     .hero-title span {
-      color: #dc2626;
+      color: #dc2626; /* red Merry Christmas */
     }
 
     .hero-subtitle {
@@ -224,7 +184,7 @@
       font-size: 0.88rem;
       color: var(--text-soft);
       line-height: 1.6;
-      max-width: 360px;
+      max-width: 380px;
     }
 
     .hero-copy strong {
@@ -336,7 +296,7 @@
     }
 
     .scr-line-1 { letter-spacing: 0.18em; }
-    .scr-line-2 { margin-top: 0.2rem; font-weight: 600; } /* back to black */
+    .scr-line-2 { margin-top: 0.2rem; font-weight: 600; }
     .scr-line-3 { margin-top: 0.2rem; }
     .scr-line-4 { margin-top: 0.2rem; }
 
@@ -416,6 +376,7 @@
       text-align: center;
     }
 
+    /* footer now blank line for spacing only */
     footer {
       border-top: 1px solid #050810;
       padding: 0.9rem 1rem 1.2rem;
@@ -436,18 +397,7 @@
 </head>
 <body>
   <div class="top-bar">
-    <button class="top-button">INPUT SOURCE</button>
-    <div class="top-right">
-      <div class="pill">
-        <span class="dot"></span>
-        <span>Presale live</span>
-      </div>
-      <div class="top-links">
-        <a href="#" target="_blank" rel="noopener">Chart</a>
-        <a href="#" target="_blank" rel="noopener">Telegram</a>
-        <a href="#" target="_blank" rel="noopener">X</a>
-      </div>
-    </div>
+    <small>THE FIRST SMS · 1992</small>
   </div>
 
   <div class="wrapper">
@@ -457,8 +407,10 @@
           <img src="IMG_5422.JPG" alt="Retro phone sending Merry Christmas SMS">
         </div>
         <p class="left-caption">
-          In 1992, the first SMS ever sent read <strong>“Merry Christmas”</strong> on a chunky GSM phone.
-          $OGSMS is a meme coin that brings that moment on‑chain.
+          In 1992, the very first text message travelled through the airwaves from a computer
+          to a chunky Orbitel GSM handset. It simply read <strong>“Merry Christmas”</strong> –
+          a small message that quietly started the era of SMS and everything that came after.
+          $OGSMS is a tribute to that moment, freezing the original greeting forever on‑chain.
         </p>
       </div>
     </section>
@@ -482,14 +434,13 @@
             $OGSMS
           </h1>
           <p class="hero-copy">
-            <strong>$OGSMS</strong> is a retro meme coin inspired by the original text message.
-            No fake promises – just pure OG telecom nostalgia, chain messages and degen energy.
+            <strong>$OGSMS</strong> is a simple on‑chain monument to the birth of texting:
+            no roadmap, no utilities, just pure early‑90s telecom nostalgia and a signal
+            for anyone who still loves the sound of an incoming message.
           </p>
           <div class="hero-badges">
             <span class="badge badge-strong">Ticker: $OGSMS</span>
-            <span class="badge">Chain: your‑chain‑here</span>
-            <span class="badge">Supply: 1 000 000 000</span>
-            <span class="badge">Tax: 0 / 0</span>
+            <span class="badge">Retro GSM · 1992</span>
           </div>
           <div class="btn-row">
             <button class="btn btn-primary" onclick="openBuy()">BUY / TRADE</button>
@@ -536,9 +487,7 @@
     </section>
   </div>
 
-  <footer>
-    $OGSMS is a meme coin for entertainment only. This is not financial advice – always do your own research.
-  </footer>
+  <footer></footer>
 
   <script>
     const BUY_URL = "#";  // put your real DEX / presale link here

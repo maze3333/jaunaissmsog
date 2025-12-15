@@ -188,18 +188,34 @@
       z-index: 1;
     }
 
+    /* updated title styling */
     .hero-title {
       font-family: "IBM Plex Mono", "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Courier New", monospace;
-      font-size: 2rem;
+      font-size: 2.05rem;
       line-height: 1.35;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
       color: #e5e7eb;
       margin: 0 0 0.7rem;
     }
 
-    .hero-title span {
-      color: #dc2626;
+    .hero-title .line-main {
+      display: block;
+    }
+
+    .hero-title .line-xmas {
+      display: block;
+      color: #f97373; /* softer retro red */
+      text-shadow: 0 0 12px rgba(248, 113, 113, 0.9);
+    }
+
+    .hero-title .line-ticker {
+      display: block;
+      font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.3em;
+      margin-top: 0.4rem;
+      color: #9ca3af;
     }
 
     .hero-copy {
@@ -298,7 +314,6 @@
       align-items: flex-start;
     }
 
-    /* retro device with antenna + bezel */
     .phone-shell {
       width: 320px;
       max-width: 100%;
@@ -324,7 +339,6 @@
       pointer-events: none;
     }
 
-    /* antenna block */
     .phone-antenna {
       position: absolute;
       top: 0.4rem;
@@ -385,7 +399,6 @@
       text-align: center;
     }
 
-    /* keypad base (darker oval) */
     .phone-keypad-base {
       margin-top: 0.8rem;
       padding: 0.75rem 0.55rem 0.5rem;
@@ -503,14 +516,14 @@
         <div class="hero-frame">
           <div class="hero-frame-inner">
             <h1 class="hero-title">
-              THE FIRST SMS:<br>
-              <span>"MERRY CHRISTMAS"</span><br>
-              $OGSMS
+              <span class="line-main">THE FIRST SMS:</span>
+              <span class="line-xmas">"MERRY CHRISTMAS"</span>
+              <span class="line-ticker">$OGSMS</span>
             </h1>
             <p class="hero-copy">
-              <strong>$OGSMS</strong> is a simple on‑chain monument to the birth of texting:
-              no roadmap, no utilities, just pure early‑90s telecom nostalgia and a signal
-              for anyone who still loves the sound of an incoming message.
+              <strong>$OGSMS</strong> turns the first text message into a signal you can actually trade —
+              a Christmas greeting frozen on‑chain for late‑night degens, chat hoarders and anyone who
+              still gets a rush from a blinking inbox.
             </p>
             <div class="hero-badges">
               <span class="badge badge-strong">Ticker: $OGSMS</span>

@@ -307,6 +307,20 @@
       border: 1px solid #0b0f19;
       padding: 1.1rem 1.1rem 1.3rem;
       box-shadow: 0 24px 70px rgba(0,0,0,0.9);
+      position: relative;
+    }
+
+    /* vibration animation */
+    .phone-shell.vibrate {
+      animation: phoneShake 0.25s ease-in-out 0s 3;
+    }
+
+    @keyframes phoneShake {
+      0%   { transform: translateX(0); }
+      25%  { transform: translateX(-3px); }
+      50%  { transform: translateX(3px); }
+      75%  { transform: translateX(-2px); }
+      100% { transform: translateX(0); }
     }
 
     .phone-screen {
@@ -485,7 +499,7 @@
         </div>
 
         <div class="phone-column">
-          <div class="phone-shell">
+          <div class="phone-shell" id="phone-shell">
             <div class="phone-screen">
               <div class="scr-line-1">SIGNAL /////</div>
               <div class="scr-line-2">MERRY CHRISTMAS</div>
@@ -537,6 +551,7 @@
 
     const statusEl = document.getElementById('status');
     const logEl = document.getElementById('log');
+    const phoneShell = document.getElementById('phone-shell');
 
     function openBuy() {
       if (BUY_URL === "#") {
@@ -574,10 +589,17 @@
         const now = new Date();
         lastSent = now;
 
+        // play sound
         try {
           beep.currentTime = 0;
           beep.play();
         } catch (e) {}
+
+        // vibrate phone
+        phoneShell.classList.add("vibrate");
+        setTimeout(() => {
+          phoneShell.classList.remove("vibrate");
+        }, 800);
 
         logEl.textContent =
           'Virtual SMS "MERRY CHRISTMAS" broadcast at ' + now.toLocaleTimeString() + '.';
@@ -604,4 +626,5 @@
   </script>
 </body>
 </html>
+
 

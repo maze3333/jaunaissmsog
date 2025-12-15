@@ -81,6 +81,472 @@
     }
 
     .top-links a {
-      font
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #6b7280;
+    }
 
+    .wrapper {
+      flex: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1.45fr);
+      min-height: 0;
+    }
 
+    .left {
+      background: #05070d;
+      padding: 1rem;
+    }
+
+    .left-inner {
+      border-radius: 0.5rem;
+      background: #05070d;
+      border: 1px solid #050810;
+      padding: 0.4rem;
+      height: 100%;
+    }
+
+    .sms-image-box {
+      background: #05070d;
+      border-radius: 0.6rem;
+      border: 1px solid #151824;
+      max-width: 430px;
+      width: 100%;
+      overflow: hidden;
+      margin: 0.2rem auto 0;
+    }
+
+    .sms-image-box img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .left-caption {
+      margin-top: 0.8rem;
+      font-size: 0.78rem;
+      color: var(--text-soft);
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .right {
+      position: relative;
+      padding: 1.2rem 1.4rem 1.4rem;
+      background: radial-gradient(circle at 90% 0, rgba(34,197,94,0.32), transparent 55%),
+                  radial-gradient(circle at 0 100%, rgba(59,130,246,0.25), transparent 55%),
+                  #02040a;
+      overflow: hidden;
+    }
+
+    .matrix {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.18;
+      background-image:
+        linear-gradient(to bottom, rgba(34,197,94,0.35) 1px, transparent 1px),
+        linear-gradient(to right, rgba(34,197,94,0.16) 1px, transparent 1px);
+      background-size: 42px 22px;
+      mix-blend-mode: screen;
+    }
+
+    .right-content {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.1fr);
+      gap: 1.3rem;
+    }
+
+    .hero-title {
+      font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 1.9rem;
+      line-height: 1.3;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #e5e7eb;
+      margin: 0.3rem 0 0.7rem;
+    }
+
+    .hero-title span {
+      color: var(--accent2);
+    }
+
+    .hero-subtitle {
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-copy {
+      font-size: 0.88rem;
+      color: var(--text-soft);
+      line-height: 1.6;
+      max-width: 360px;
+    }
+
+    .hero-copy strong {
+      color: #e5e7eb;
+    }
+
+    .hero-badges {
+      margin-top: 0.7rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .badge {
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid #1f2937;
+      background: rgba(5,8,20,0.8);
+      font-size: 0.72rem;
+      color: var(--text-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .badge-strong {
+      border-color: rgba(34,197,94,0.45);
+      color: #bbf7d0;
+      background: rgba(5, 46, 22, 0.64);
+    }
+
+    .btn-row {
+      margin-top: 0.9rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .btn {
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      padding: 0.55rem 1.2rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      color: #f9fafb;
+      box-shadow: 0 12px 30px rgba(22, 163, 74, 0.9);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border: 1px solid #1f2937;
+      color: #e5e7eb;
+    }
+
+    .meta-small {
+      margin-top: 0.7rem;
+      font-size: 0.78rem;
+      color: var(--text-soft);
+    }
+
+    .phone-column {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .phone-shell {
+      width: 310px;
+      max-width: 100%;
+      border-radius: 1.5rem;
+      background: radial-gradient(circle at top, #111827 0, #05070d 50%, #020308 100%);
+      border: 1px solid #0b0f19;
+      padding: 1.1rem 1.1rem 1.3rem;
+      box-shadow: 0 24px 70px rgba(0,0,0,0.9);
+    }
+
+    .phone-screen {
+      background: #fbbf24;
+      border-radius: 0.5rem;
+      padding: 0.6rem 0.7rem;
+      color: #111827;
+      font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      border: 2px solid #111827;
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.35), 0 8px 18px rgba(0,0,0,0.65);
+    }
+
+    .scr-line-1 { letter-spacing: 0.18em; }
+    .scr-line-2 { margin-top: 0.2rem; font-weight: 600; }
+    .scr-line-3 { margin-top: 0.2rem; }
+    .scr-line-4 { margin-top: 0.2rem; }
+
+    .phone-brand {
+      margin-top: 0.45rem;
+      text-align: right;
+      font-size: 0.7rem;
+      color: #9ca3af;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .phone-top-legend {
+      margin-top: 0.7rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #9ca3af;
+      text-align: center;
+    }
+
+    .phone-keypad {
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+    }
+
+    .key {
+      background: #0b1020;
+      border-radius: 999px;
+      border: 1px solid #1f2937;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.85);
+      text-align: center;
+      padding: 0.55rem 0;
+      color: #e5e7eb;
+      font-size: 0.86rem;
+      cursor: pointer;
+    }
+
+    .key span {
+      display: block;
+      font-size: 0.7rem;
+      color: #9ca3af;
+      margin-top: 0.12rem;
+    }
+
+    .key-bottom-row {
+      margin-top: 0.7rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+    }
+
+    .key-ctrl {
+      border-radius: 999px;
+      padding: 0.55rem 0;
+      text-align: center;
+      font-size: 0.78rem;
+      color: #f9fafb;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.9);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .k-send { background: #22c55e; }
+    .k-last { background: #3b82f6; }
+    .k-end  { background: #ef4444; }
+
+    .phone-log {
+      margin-top: 0.7rem;
+      font-size: 0.75rem;
+      color: #9ca3af;
+      min-height: 1.2em;
+      text-align: center;
+    }
+
+    footer {
+      border-top: 1px solid #050810;
+      padding: 0.9rem 1rem 1.2rem;
+      font-size: 0.78rem;
+      color: #6b7280;
+      text-align: center;
+      background: #010308;
+    }
+
+    @media (max-width: 960px) {
+      .wrapper { grid-template-columns: minmax(0, 1fr); }
+      .right-content { grid-template-columns: minmax(0, 1fr); }
+      .left { order: 2; }
+      .right { order: 1; }
+      .hero-title { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <button class="top-button">INPUT SOURCE</button>
+    <div class="top-right">
+      <div class="pill">
+        <span class="dot"></span>
+        <span>Presale live</span>
+      </div>
+      <div class="top-links">
+        <a href="#" target="_blank" rel="noopener">Chart</a>
+        <a href="#" target="_blank" rel="noopener">Telegram</a>
+        <a href="#" target="_blank" rel="noopener">X</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrapper">
+    <section class="left">
+      <div class="left-inner">
+        <div class="sms-image-box">
+          <img src="IMG_5422.JPG" alt="Retro phone sending Merry Christmas SMS">
+        </div>
+        <p class="left-caption">
+          In 1992, the first SMS ever sent read <strong>“Merry Christmas”</strong> on a chunky GSM phone.
+          $OGSMS is a meme coin that brings that moment on‑chain.
+        </p>
+      </div>
+    </section>
+
+    <section class="right">
+      <div class="matrix"></div>
+      <div class="right-content">
+        <div>
+          <p class="hero-subtitle">THE FIRST SMS: “MERRY CHRISTMAS”</p>
+          <h1 class="hero-title">
+            THE FIRST SMS:<br>
+            <span>"MERRY CHRISTMAS"</span><br>
+            $OGSMS
+          </h1>
+          <p class="hero-copy">
+            <strong>$OGSMS</strong> is a retro meme coin inspired by the original text message.
+            No fake promises – just pure OG telecom nostalgia, chain messages and degen energy.
+          </p>
+          <div class="hero-badges">
+            <span class="badge badge-strong">Ticker: $OGSMS</span>
+            <span class="badge">Chain: your‑chain‑here</span>
+            <span class="badge">Supply: 1 000 000 000</span>
+            <span class="badge">Tax: 0 / 0</span>
+          </div>
+          <div class="btn-row">
+            <button class="btn btn-primary" onclick="openBuy()">BUY / TRADE</button>
+            <button class="btn btn-ghost" onclick="copySiteLink()">COPY WEBSITE</button>
+          </div>
+          <p class="meta-small" id="status"></p>
+        </div>
+
+        <div class="phone-column">
+          <div class="phone-shell">
+            <div class="phone-screen">
+              <div class="scr-line-1">SIGNAL /////</div>
+              <div class="scr-line-2">MERRY CHRISTMAS</div>
+              <div class="scr-line-3">VODAFONE</div>
+              <div class="scr-line-4">$OGSMS</div>
+            </div>
+            <div class="phone-brand">Orbitel · GSM</div>
+            <div class="phone-top-legend">
+              TYPE "1992" ON THE KEYPAD, THEN PRESS "SEND"
+            </div>
+
+            <div class="phone-keypad">
+              <div class="key" onclick="pressKey(1)">1<span>ABC</span></div>
+              <div class="key" onclick="pressKey(2)">2<span>DEF</span></div>
+              <div class="key" onclick="pressKey(3)">3<span>GHI</span></div>
+              <div class="key" onclick="pressKey(4)">4<span>JKL</span></div>
+              <div class="key" onclick="pressKey(5)">5<span>MNO</span></div>
+              <div class="key" onclick="pressKey(6)">6<span>PQR</span></div>
+              <div class="key" onclick="pressKey(7)">7<span>STU</span></div>
+              <div class="key" onclick="pressKey(8)">8<span>VWX</span></div>
+              <div class="key" onclick="pressKey(9)">9<span>YZ</span></div>
+            </div>
+
+            <div class="key-bottom-row">
+              <button class="key-ctrl k-send" onclick="sendSms()">SEND</button>
+              <button class="key-ctrl k-last" onclick="showLast()">LAST</button>
+              <button class="key-ctrl k-end" onclick="endSession()">END</button>
+            </div>
+
+            <div class="phone-log" id="log"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    $OGSMS is a meme coin for entertainment only. This is not financial advice – always do your own research.
+  </footer>
+
+  <script>
+    const BUY_URL = "#";  // put your real DEX / presale link here
+
+    let lastSent = null;
+    let inputCode = "";
+
+    const statusEl = document.getElementById('status');
+    const logEl = document.getElementById('log');
+
+    function openBuy() {
+      if (BUY_URL === "#") {
+        statusEl.textContent = "Add your real DEX / presale link in the code (BUY_URL).";
+        return;
+      }
+      window.open(BUY_URL, "_blank", "noopener");
+    }
+
+    function copySiteLink() {
+      const url = window.location.href;
+      navigator.clipboard.writeText(url).then(() => {
+        statusEl.textContent = "Website link copied – paste it into your coin description.";
+      }).catch(() => {
+        statusEl.textContent = "Copy failed; copy the URL from the address bar.";
+      });
+    }
+
+    function pressKey(n) {
+      if (inputCode.length >= 4) return;
+      inputCode += String(n);
+      updateLog();
+    }
+
+    function updateLog() {
+      if (!inputCode) {
+        logEl.textContent = "TYPE 1992 ON THE KEYPAD, THEN PRESS SEND.";
+      } else {
+        logEl.textContent = "INPUT: " + inputCode;
+      }
+    }
+
+    function sendSms() {
+      if (inputCode === "1992") {
+        const now = new Date();
+        lastSent = now;
+        logEl.textContent = 'Virtual SMS "MERRY CHRISTMAS" broadcast at ' + now.toLocaleTimeString() + '.';
+        inputCode = "";
+      } else {
+        logEl.textContent = "WRONG CODE. TYPE 1992, THEN PRESS SEND.";
+      }
+    }
+
+    function showLast() {
+      if (!lastSent) {
+        logEl.textContent = "No previous SMS logged – enter 1992 and press SEND.";
+      } else {
+        logEl.textContent = "Last SMS at " + lastSent.toLocaleTimeString() + ".";
+      }
+    }
+
+    function endSession() {
+      inputCode = "";
+      logEl.textContent = "Session cleared. TYPE 1992 THEN PRESS SEND.";
+    }
+
+    updateLog();
+  </script>
+</body>
+</html>

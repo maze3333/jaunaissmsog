@@ -569,10 +569,9 @@
   <footer></footer>
 
   <script>
-    // Replace this string with your real contract address once launched
-    const CONTRACT_ADDRESS = "PASTE_CONTRACT_ADDRESS_HERE";
+    // live contract address
+    const CONTRACT_ADDRESS = "9zS7kYZ5wPr1NseV3MKDyQoKf3xfngbUKUSMoUB7pump";
 
-    // updated audio file
     const beep = new Audio("audience-merry-xmas-46708.mp3");
 
     let lastSent = null;
@@ -583,10 +582,6 @@
     const phoneShell = document.getElementById('phone-shell');
 
     function copyCA() {
-      if (CONTRACT_ADDRESS === "PASTE_CONTRACT_ADDRESS_HERE") {
-        statusEl.textContent = "Add your contract address in the code (CONTRACT_ADDRESS).";
-        return;
-      }
       navigator.clipboard.writeText(CONTRACT_ADDRESS).then(() => {
         statusEl.textContent = "Contract address copied. Paste it into your swap or wallet.";
       }).catch(() => {
@@ -644,7 +639,7 @@
       if (!lastSent) {
         logEl.textContent = "No previous SMS logged – enter 1992 and press SEND.";
       } else {
-        logEl.textContent = "Last SMS at " + lastSent.toLocaleTimeString() + ".";
+        logEl.textContent = "Last SMS at " + lastSent.toLocaleTimeString() + '.';
       }
     }
 
@@ -657,3 +652,4 @@
   </script>
 </body>
 </html>
+

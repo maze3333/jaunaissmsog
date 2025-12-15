@@ -2,139 +2,320 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Maze's Simple Site</title>
+  <title>The First SMS · Merry Christmas</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #0f172a;
+      background: #050810;
       color: #e5e7eb;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      min-height: 100vh;
     }
-    header {
-      padding: 1.5rem 1.25rem;
-      text-align: center;
-      background: #020617;
-      border-bottom: 1px solid #1f2937;
+
+    .top-bar {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid #111827;
+      display: flex;
+      justify-content: flex-start;
     }
-    main {
+
+    .top-bar button {
+      background: transparent;
+      border: 1px solid #374151;
+      color: #e5e7eb;
+      padding: 0.35rem 0.7rem;
+      font-size: 0.8rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .top-bar button:hover {
+      background: #111827;
+    }
+
+    .wrapper {
       flex: 1;
-      max-width: 720px;
-      margin: 2rem auto;
-      padding: 0 1.25rem 3rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1.75fr);
+      gap: 0;
+      min-height: 0;
     }
-    h1 {
-      font-size: 2.1rem;
-      margin-bottom: 0.25rem;
+
+    .left-panel,
+    .right-panel {
+      padding: 1rem;
     }
-    h2 {
-      margin-top: 2rem;
-      font-size: 1.4rem;
+
+    .left-panel {
+      border-right: 1px solid #111827;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
     }
-    p {
-      line-height: 1.6;
-      margin: 0.75rem 0;
-    }
-    .card {
+
+    .img-frame {
+      margin-top: 1rem;
+      max-width: 420px;
+      width: 100%;
       background: #020617;
       border-radius: 0.75rem;
-      border: 1px solid #1f2937;
-      padding: 1.5rem;
-      margin-top: 1.25rem;
-      box-shadow: 0 18px 45px rgba(0,0,0,0.45);
+      overflow: hidden;
+      border: 1px solid #111827;
     }
-    .button-row {
-      margin-top: 1.25rem;
-      display: flex;
-      gap: 0.75rem;
-      flex-wrap: wrap;
+
+    .img-frame img {
+      display: block;
+      width: 100%;
+      height: auto;
     }
-    .btn {
-      border: none;
-      border-radius: 999px;
-      padding: 0.6rem 1.3rem;
-      font-size: 0.95rem;
-      cursor: pointer;
-      font-weight: 500;
-      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+
+    .right-panel {
+      position: relative;
+      background:
+        radial-gradient(circle at 10% 0, rgba(56,189,248,0.35), transparent 55%),
+        radial-gradient(circle at 90% 100%, rgba(129,140,248,0.3), transparent 55%),
+        #020617;
     }
-    .btn-primary {
-      background: linear-gradient(135deg, #4f46e5, #06b6d4);
-      color: white;
-      box-shadow: 0 10px 25px rgba(79,70,229,0.5);
-    }
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 14px 35px rgba(79,70,229,0.7);
-    }
-    .btn-ghost {
-      background: transparent;
-      color: #e5e7eb;
-      border: 1px solid #4b5563;
-    }
-    .btn-ghost:hover {
-      background: rgba(15,23,42,0.85);
-    }
-    footer {
+
+    .title {
+      margin-top: 1rem;
       text-align: center;
-      padding: 1rem 0 1.5rem;
-      font-size: 0.85rem;
-      color: #9ca3af;
-      border-top: 1px solid #1f2937;
-      background: #020617;
+      font-size: 2.1rem;
+      letter-spacing: 0.08em;
     }
-    @media (max-width: 600px) {
-      h1 { font-size: 1.7rem; }
-      main { margin-top: 1.5rem; }
+
+    .title span {
+      color: #f97316;
+    }
+
+    .subtitle {
+      margin-top: 0.35rem;
+      text-align: center;
+      font-size: 0.9rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #9ca3af;
+    }
+
+    .phone-shell {
+      margin: 1.6rem auto 0;
+      max-width: 360px;
+      background: rgba(15,23,42,0.96);
+      border-radius: 1.4rem;
+      border: 1px solid #0f172a;
+      padding: 1.1rem 1.2rem 1.4rem;
+      box-shadow: 0 26px 60px rgba(0,0,0,0.7);
+    }
+
+    .screen {
+      background: #fbbf24;
+      border-radius: 0.45rem;
+      padding: 0.55rem 0.65rem;
+      color: #1f2937;
+      font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      line-height: 1.4;
+      border: 2px solid #111827;
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.25);
+    }
+
+    .screen-line-1 {
+      letter-spacing: 0.18em;
+    }
+
+    .screen-line-2 {
+      margin-top: 0.25rem;
+      font-weight: 600;
+    }
+
+    .screen-line-3 {
+      margin-top: 0.15rem;
+    }
+
+    .screen-line-4 {
+      margin-top: 0.15rem;
+    }
+
+    .phone-label {
+      margin-top: 0.45rem;
+      text-align: right;
+      font-size: 0.7rem;
+      color: #9ca3af;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .instructions {
+      margin-top: 1.1rem;
+      font-size: 0.8rem;
+      text-align: center;
+      color: #cbd5f5;
+    }
+
+    .instructions span {
+      color: #a5b4fc;
+    }
+
+    .keypad {
+      margin-top: 1.3rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.45rem;
+    }
+
+    .key {
+      background: #111827;
+      border-radius: 999px;
+      padding: 0.55rem 0;
+      text-align: center;
+      color: #e5e7eb;
+      font-size: 0.85rem;
+      border: 1px solid #1f2937;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.6);
+    }
+
+    .key-label {
+      display: block;
+      font-size: 0.7rem;
+      color: #9ca3af;
+      margin-top: 0.1rem;
+    }
+
+    .key-action-row {
+      margin-top: 0.6rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.45rem;
+    }
+
+    .key-send { background: #22c55e; }
+    .key-last { background: #3b82f6; }
+    .key-end  { background: #ef4444; }
+
+    .key-action {
+      border-radius: 999px;
+      padding: 0.55rem 0;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #f9fafb;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 10px 22px rgba(0,0,0,0.7);
+    }
+
+    .log {
+      margin-top: 0.9rem;
+      font-size: 0.78rem;
+      color: #9ca3af;
+      text-align: center;
+      min-height: 1.2em;
+    }
+
+    @media (max-width: 800px) {
+      .wrapper {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .left-panel {
+        order: 2;
+      }
+      .right-panel {
+        order: 1;
+        min-height: 60vh;
+      }
+      .title {
+        font-size: 1.7rem;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Maze’s Minimal Website</h1>
-    <p>Deployed with GitHub Pages · jaunaissmsog</p>
-  </header>
+  <div class="top-bar">
+    <button type="button">INPUT SOURCE</button>
+  </div>
 
-  <main>
-    <div class="card">
-      <h2>Welcome 👋</h2>
-      <p>
-        This is a super simple but fully working website hosted on GitHub Pages.
-        You can edit this text directly in <code>index.html</code> to turn it into
-        your personal landing page, portfolio, or project page.
-      </p>
-
-      <h2>What you can change</h2>
-      <p>
-        Try changing the heading, colors, or text to match your style.
-        Every time you commit a change to this file, the live site updates automatically.
-      </p>
-
-      <div class="button-row">
-        <button class="btn btn-primary" onclick="sayHi()">Click me</button>
-        <button class="btn btn-ghost" onclick="window.location.reload()">Reload page</button>
+  <div class="wrapper">
+    <!-- Left: original image -->
+    <section class="left-panel">
+      <div class="img-frame">
+        <!-- Make sure IMG_5422.JPG is uploaded in the repo root -->
+        <img src="IMG_5422.JPG" alt="Vintage phone sending first SMS">
       </div>
+    </section>
 
-      <p id="message" style="margin-top:1rem;color:#a5b4fc;"></p>
-    </div>
-  </main>
+    <!-- Right: recreated phone UI -->
+    <section class="right-panel">
+      <h1 class="title">THE FIRST SMS:<br><span>"MERRY CHRISTMAS"</span></h1>
+      <p class="subtitle">TYPE “1992” OR PRESS “SEND”</p>
 
-  <footer>
-    Built by Maze · Powered by GitHub Pages
-  </footer>
+      <div class="phone-shell">
+        <div class="screen">
+          <div class="screen-line-1">SIGNAL /////</div>
+          <div class="screen-line-2">MERRY CHRISTMAS</div>
+          <div class="screen-line-3">VODAFONE</div>
+          <div class="screen-line-4">$0GSM$</div>
+        </div>
+        <div class="phone-label">Orbitel · GSM</div>
+
+        <p class="instructions">
+          This is a tribute to the very first SMS ever sent in 1992.<br>
+          <span>Tap SEND below</span> to log a virtual message delivery.
+        </p>
+
+        <div class="keypad">
+          <div class="key">1<span class="key-label">ABC</span></div>
+          <div class="key">2<span class="key-label">DEF</span></div>
+          <div class="key">3<span class="key-label">GHI</span></div>
+
+          <div class="key">4<span class="key-label">JKL</span></div>
+          <div class="key">5<span class="key-label">MNO</span></div>
+          <div class="key">6<span class="key-label">PQR</span></div>
+
+          <div class="key">7<span class="key-label">STU</span></div>
+          <div class="key">8<span class="key-label">VWX</span></div>
+          <div class="key">9<span class="key-label">YZ</span></div>
+        </div>
+
+        <div class="key-action-row">
+          <button class="key-action key-send" onclick="sendSms()">SEND</button>
+          <button class="key-action key-last" onclick="showLast()">LAST</button>
+          <button class="key-action key-end" onclick="endSession()">END</button>
+        </div>
+
+        <div class="log" id="log"></div>
+      </div>
+    </section>
+  </div>
 
   <script>
-    function sayHi() {
-      const msg = document.getElementById('message');
-      const now = new Date().toLocaleTimeString();
-      msg.textContent = 'Website button clicked at ' + now + '. This proves JavaScript works here.';
+    let lastMessage = null;
+
+    function sendSms() {
+      const now = new Date();
+      lastMessage = now;
+      const log = document.getElementById('log');
+      log.textContent = 'Virtual SMS "MERRY CHRISTMAS" delivered at ' + now.toLocaleTimeString() + '.';
+    }
+
+    function showLast() {
+      const log = document.getElementById('log');
+      if (!lastMessage) {
+        log.textContent = 'No previous SMS logged yet. Press SEND first.';
+      } else {
+        log.textContent = 'Last SMS logged at ' + lastMessage.toLocaleTimeString() + '.';
+      }
+    }
+
+    function endSession() {
+      const log = document.getElementById('log');
+      log.textContent = 'Session ended. Imagine the phone going back on the dock.';
     }
   </script>
 </body>
 </html>
-
-
-  

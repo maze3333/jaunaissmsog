@@ -153,6 +153,42 @@
       mix-blend-mode: screen;
     }
 
+    /* SMS rain */
+    .sms-rain {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+      font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+
+    .sms-rain span {
+      position: absolute;
+      top: -40px;
+      color: rgba(190, 242, 100, 0.6);
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-shadow: 0 0 8px rgba(190, 242, 100, 0.9);
+      animation-name: smsFall;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+
+    .sms-rain span:nth-child(1) { left: 8%;  animation-duration: 7s;  animation-delay: 0s;  }
+    .sms-rain span:nth-child(2) { left: 24%; animation-duration: 9s;  animation-delay: 1.5s; }
+    .sms-rain span:nth-child(3) { left: 46%; animation-duration: 6s;  animation-delay: 0.8s; }
+    .sms-rain span:nth-child(4) { left: 64%; animation-duration: 8.5s; animation-delay: 2.2s; }
+    .sms-rain span:nth-child(5) { left: 78%; animation-duration: 7.5s; animation-delay: 3.1s; }
+    .sms-rain span:nth-child(6) { left: 90%; animation-duration: 10s; animation-delay: 1s; }
+
+    @keyframes smsFall {
+      0%   { transform: translateY(-40px); opacity: 0; }
+      10%  { opacity: 1; }
+      100% { transform: translateY(120vh); opacity: 0; }
+    }
+
     .right-content {
       position: relative;
       z-index: 1;
@@ -171,7 +207,7 @@
       margin: 0.3rem 0 0.7rem;
     }
 
-    .hero-titlespan {
+    .hero-title span {
       color: var(--accent2);
     }
 
@@ -415,6 +451,14 @@
 
     <section class="right">
       <div class="matrix"></div>
+      <div class="sms-rain">
+        <span>MERRY</span>
+        <span>CHRISTMAS</span>
+        <span>1992</span>
+        <span>$OGSMS</span>
+        <span>SMS</span>
+        <span>OG</span>
+      </div>
       <div class="right-content">
         <div>
           <p class="hero-subtitle">THE FIRST SMS: “MERRY CHRISTMAS”</p>
@@ -486,7 +530,7 @@
     const BUY_URL = "#";  // put your real DEX / presale link here
 
     // use your uploaded sound file
-   const beep = new Audio("christmassatellite-96806.mp3");
+    const beep = new Audio("christmassatellite-96806.mp3");
 
     let lastSent = null;
     let inputCode = "";
@@ -530,13 +574,10 @@
         const now = new Date();
         lastSent = now;
 
-        // play retro beep sound
         try {
           beep.currentTime = 0;
           beep.play();
-        } catch (e) {
-          // ignore if browser blocks autoplay
-        }
+        } catch (e) {}
 
         logEl.textContent =
           'Virtual SMS "MERRY CHRISTMAS" broadcast at ' + now.toLocaleTimeString() + '.';
